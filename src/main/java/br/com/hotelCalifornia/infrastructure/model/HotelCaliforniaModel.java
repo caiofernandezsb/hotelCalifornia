@@ -1,0 +1,35 @@
+package br.com.hotelCalifornia.infrastructure.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
+@Entity
+@Builder
+
+
+@Table(name = "hotel_california")
+public class HotelCaliforniaModel {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "local")
+    private String local;
+
+    @Column(name = "capacidade")
+    private int capacidade;
+
+    @Column(name = "cnpj")
+    private String cnpj;
+}
